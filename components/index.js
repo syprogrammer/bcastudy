@@ -1,0 +1,7 @@
+export {default as Navbar} from './Navbar'
+export {default as Semester} from './Semester'
+export {default as Footer} from './Footer'
+export {default as Hero } from './Hero'
+export {default as Learn} from './Learn.jsx'
+export {default as Contact} from './Contact'
+export {default as MainLoader} from './MainLoader'
