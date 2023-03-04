@@ -67,7 +67,7 @@ export async function getStaticPaths() {
       sub: item.slug.current,
     },
   }))
-  console.log("path", paths)
+ 
   return {
     paths,
     fallback: true
@@ -76,7 +76,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { params } = context
   const query = `*[_type =="syllabus" && slug.current=="${params.sub}"]`
-  console.log(query)
+
   const syllabusdata = await client.fetch(query)
   return {
     props: {

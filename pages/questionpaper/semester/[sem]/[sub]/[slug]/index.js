@@ -77,9 +77,9 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
     const { params } = context
     const query = `*[_type =="questionpaper" && slug.current=="${params.slug}"]`
-    console.log(query)
+  
     const data = await client.fetch(query)
-    console.log(data)
+  
     return {
         props: {
             data:data

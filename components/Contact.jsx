@@ -36,7 +36,7 @@ const Contact = () => {
 
     return (
         <>
-            <div className='my-5 border p-5 shadow'>
+            <div className='my-5 border p-5 shadow' id='contact'>
 
 
                 {!isFormSubmitted ? (

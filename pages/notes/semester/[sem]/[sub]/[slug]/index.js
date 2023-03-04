@@ -56,9 +56,8 @@ export default index
 
 export async function getStaticPaths() {
     const query = `*[_type =="notes"]`
-    console.log(query)
     const data = await client.fetch(query)
-    console.log("syllabus-subjects",data)
+   
 
     const paths = data.map((item) => ({
         params: { 
@@ -76,9 +75,9 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
     const { params } = context
     const query = `*[_type =="notes" && slug.current=="${params.slug}"]`
-    console.log(query)
+ 
     const data = await client.fetch(query)
-    console.log(data)
+   
     return {
         props: {
             data:data

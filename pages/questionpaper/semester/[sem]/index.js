@@ -55,9 +55,9 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
     const { params } = context
     const query = `*[_type =="subjects" && semester=="${params.sem}" ]`
-    console.log(query)
+ 
     const data = await client.fetch(query)
-    console.log(data)
+    
     return {
         props: {
             subjects: data
