@@ -74,6 +74,7 @@ const Navbar = () => {
 
                                     <Link href={`${item.link}`} onClick={() => setToggle(false)}
                                         className='flex gap-2 items-center'
+                                        style={{ listStyle: 'none' }}
                                     >
                                         {<item.icon />}
                                         {item.title}
