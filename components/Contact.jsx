@@ -70,6 +70,7 @@ const Contact = () => {
                                             Enter your name
                                         <input
                                             id='name'
+                                            name='name'
                                             type='text'
                                             required
                                             minLength="3"
@@ -128,7 +129,7 @@ const Contact = () => {
                                 width='100'
                                 height='100'
                                 alt="sent"
-                                className='mx-auto py-4 shadow-sm w-[200px]'
+                                className='mx-auto py-4 w-[200px]'
                             />
                             <h3 className="head-text p-5 text-center text-2xl py-10">
                                 Thank you for getting in touch!

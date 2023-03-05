@@ -50,6 +50,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
     const { params } = context
     const query = `*[_type =="notes" && semester=="${params.sem}" && subject=="${params.sub}"]`
+
     const data = await client.fetch(query)
     
     return {
