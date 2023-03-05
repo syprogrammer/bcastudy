@@ -63,7 +63,7 @@ export async function getStaticPaths() {
         params: { 
             slug:item.slug.current,
             sem:item.semester,
-            sub:item.subject || "default"
+            sub:item.subject
                 },
       }))
 
