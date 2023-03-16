@@ -15,7 +15,7 @@ const RichTextComponent = {
         return null
       }
       return (
-        <div className="relative w-full md:w-1/2 border h-fit m-10 mx-auto ">
+        <div className="relative p-4 md:w-1/2 border h-fit m-10 mx-auto ">
           <img
             className='object-contain'
             alt={value.alt || ' '}
