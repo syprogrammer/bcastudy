@@ -35,7 +35,7 @@ const Navbar = () => {
             {/* mobile navigation  */}
             {toggle && (
                 <motion.div
-                transition={{ duration: 0.85, ease: 'easeOut' }}
+                transition={{ duration: 0.45, ease: 'easeOut' }}
                     initial={{ width: 0 }} animate={{ width: 300 }}
                     className='transition ease-in-out delay-150 duration-300 p-5 bg-gradient-to-r from-cyan-50 to-cyan-100 fixed z-40 w-[70%] md:w-[60%] top-0 right-0 h-full'
                 >
@@ -70,7 +70,7 @@ const Navbar = () => {
 
 
                             ].map((item) => (
-                                <li key={item.title} className='p-2  hover:text-cyan-700  font-semibold '>
+                                <li key={item.title} className='p-2  hover:text-cyan-700  font-semibold list-none'>
 
                                     <Link href={`${item.link}`} onClick={() => setToggle(false)}
                                         className='flex gap-2 items-center'
