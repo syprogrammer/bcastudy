@@ -38,7 +38,11 @@ const index = ({ data }) => {
     <div className='py-8 w-full'>
       <div className='text-center font-bold'>{data[0].name}</div>
       <div className=' flex flex-wrap gap-10 p-5 justify-center w-full'>
+<<<<<<< HEAD
         <div className="container break-words border leading-loose p-5 md:p-10  flex flex-col justify-center w-[98%] md:w-[85%] mx-auto">
+=======
+        <div className="container break-words border leading-loose  p-5 md:p-10  flex flex-col justify-center w-[98%] md:w-[85%] mx-auto">
+>>>>>>> 5eac1bf1981d670341d8da3050542718604d95f4
          
           <PortableText
             value={data[0].content}
