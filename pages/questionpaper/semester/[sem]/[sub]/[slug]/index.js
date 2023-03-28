@@ -15,7 +15,7 @@ const RichTextComponent = {
         return null
       }
       return (
-        <div className="relative p-4 md:w-1/2 border h-fit m-10 mx-auto ">
+        <div className="relative p-4 md:w-1/2 border h-fit m-2 mx-auto ">
           <img
             className='object-contain'
             alt={value.alt || ' '}
@@ -37,8 +37,8 @@ const index = ({ data }) => {
   return (
     <div className='py-8'>
       <div className='text-center'>{data &&(data[0].name)}</div>
-      <div className=' flex flex-wrap gap-10 p-5 justify-center'>
-        <div className="container border  p-5 md:p-10  flex flex-wrap  justify-center w-[95%] md:w-[85%] mx-auto">
+      <div className=' flex flex-wrap gap-10 p-1 justify-center'>
+        <div className="container border  p-2 md:p-10  flex flex-wrap  justify-center w-[100%] md:w-[90%] mx-auto">
         {
           data && (
            

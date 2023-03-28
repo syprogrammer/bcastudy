@@ -15,7 +15,7 @@ const RichTextComponent = {
         return null
       }
       return (
-        <div className="relative w-full h-fit m-10 mx-auto">
+        <div className="relative w-full h-fit m-2 mx-auto">
           <img
             className='object-contain'
             alt={value.alt || ' '}
@@ -37,8 +37,8 @@ const index = ({ data }) => {
   return (
     <div className='py-8 w-full'>
       <div className='text-center font-bold'>{data[0].name}</div>
-      <div className=' flex flex-wrap gap-10 p-5 justify-center w-full'>
-        <div className="container break-words border leading-loose  p-5 md:p-10  flex flex-col justify-center w-[98%] md:w-[85%] mx-auto">
+      <div className=' flex flex-wrap gap-10 p-1 justify-center w-full'>
+        <div className="container break-words border leading-loose  p-4 md:p-10  flex flex-col justify-center w-full md:w-[85%] mx-auto">
          
           <PortableText
             value={data[0].content}
