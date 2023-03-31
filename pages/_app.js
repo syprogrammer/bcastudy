@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import { Inter } from '@next/font/google'
+import { SessionProvider } from 'next-auth/react'
 const inter = Inter({ subsets: ['latin'] })
 import Head from 'next/head'
 import { NextSeo } from 'next-seo';
@@ -12,8 +13,8 @@ export default function App({ Component, pageProps }) {
         <title>BcaStudy</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        
-  <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
+
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
       </Head>
 
       <NextSeo
@@ -31,7 +32,7 @@ export default function App({ Component, pageProps }) {
           images: [
             {
               url: "/icon-512.png",
-              width: 800,
+              width: 500,
               height: 420,
               alt: "BcaStudy",
             },
@@ -43,17 +44,17 @@ export default function App({ Component, pageProps }) {
       />
 
 
+      <SessionProvider session={pageProps.session}>
 
-
-      <div className={inter.className}>
-        <Navbar />
-        <Component {...pageProps} />
-        <Learn />
-        <Contact />
-        <Footer />
-        <Test/>
-      </div>
-
+        <div className={inter.className}>
+          <Navbar />
+          <Component {...pageProps} />
+          <Learn />
+          <Contact />
+          <Footer />
+          <Test />
+        </div>
+      </SessionProvider>
     </>
 
   )
