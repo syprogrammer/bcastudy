@@ -3,6 +3,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import { PortableText } from '@portabletext/react'
 import { client } from '../../../../../../client';
 import { useRouter } from 'next/router'
+import Comments from '../../../../../../components/Comments';
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
 }
@@ -47,6 +48,9 @@ const index = ({ data }) => {
 
         </div>
 
+      </div>
+      <div className="mt-14">
+        <Comments/>
       </div>
     </div>
   )
