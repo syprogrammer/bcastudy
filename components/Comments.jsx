@@ -4,6 +4,7 @@ import { AiOutlineSend } from 'react-icons/ai'
 import { useSession } from 'next-auth/react'
 import { BiCalendar } from 'react-icons/bi'
 import { BsPersonFill } from 'react-icons/bs'
+import Link from 'next/link'
 const Comments = ({ postid, allcomments }) => {
 
     const [formData, setFormData] = useState({ comment: '' });
@@ -70,9 +71,11 @@ const Comments = ({ postid, allcomments }) => {
                                 <button type="submit " className="text-2xl border-l py-2 px-2 text-cyan-900"><AiOutlineSend /></button>
                             </form>
                         ) : (
-                            <div className="">
+                            <Link href="/login">
+                            <div className="border p-2 text-cyan-800 border-cyan-900 rounded-lg hover:bg-cyan-800 hover:text-white">
                                 <button>Login to comment</button>
                             </div>
+                            </Link>
                         )
                     }
                 </div>
