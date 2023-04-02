@@ -3,6 +3,7 @@ import { client } from '../client';
 import { AiOutlineSend } from 'react-icons/ai'
 import { useSession } from 'next-auth/react'
 import { BiCalendar } from 'react-icons/bi'
+import { BsPersonFill } from 'react-icons/bs'
 const Comments = ({ postid, allcomments }) => {
 
     const [formData, setFormData] = useState({ comment: '' });
@@ -83,10 +84,10 @@ const Comments = ({ postid, allcomments }) => {
                                 {
                                     comments.map((cm) => {
                                         return (
-                                            <div className='flex flex-col px-5'>
+                                            <div key={cm._id} className='flex flex-col px-5'>
                                                 <div className="flex items-center gap-4 ">
                                                     <div className="">
-                                                        <img src={session.user.image} alt=""
+                                                        <img src={cm.image} alt=""
                                                             className='rounded-full w-[40px]'
                                                         />
                                                     </div>
