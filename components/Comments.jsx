@@ -11,7 +11,7 @@ const Comments = ({ postid, allcomments }) => {
     const [comments, setComments] = useState()
     useEffect(() => {
         fetch(
-            `http://localhost:3000/api/comment?id=${postid}`)
+            `https://bcastudy.vercel.app/api/comment?id=${postid}`)
             .then((res) => res.json())
             .then((json) => {
                 setComments(json)
