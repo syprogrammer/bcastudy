@@ -12,7 +12,7 @@ const Comments = ({ postid, allcomments }) => {
 
     const fetchData = ()=>{
         fetch(
-            `http://bcastudy.vercel.app/api/comment?id=${postid}`)
+            `https://bcastudy.vercel.app/api/comment?id=${postid}`)
             .then((res) => res.json())
             .then((json) => {
                 setComments(json)
