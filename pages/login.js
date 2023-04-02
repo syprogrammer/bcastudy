@@ -10,7 +10,8 @@ const login = () => {
     const router = useRouter()
 
     const handleGoogleSignin = async () => {
-        signIn('google', { callbackUrl: "/" })
+        await signIn('google', { callbackUrl: "/" })
+        
     }
 
     return (

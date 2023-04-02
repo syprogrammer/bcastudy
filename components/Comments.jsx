@@ -7,31 +7,32 @@ import { BsPersonFill } from 'react-icons/bs'
 import Link from 'next/link'
 const Comments = ({ postid, allcomments }) => {
 
-    const [formData, setFormData] = useState({ comment: '' });
-    const [comments, setComments] = useState()
-    useEffect(() => {
+    const [comment, setComment] = useState();
+    const [comments, setComments] = useState();
+
+    const fetchData = ()=>{
         fetch(
-            `https://bcastudy.vercel.app/api/comment?id=${postid}`)
+            `http://bcastudy.vercel.app/api/comment?id=${postid}`)
             .then((res) => res.json())
             .then((json) => {
                 setComments(json)
             })
+    }
+    useEffect(() => {
+        fetchData()
     }, [])
+
+
     console.log("comments", comments)
     const { data: session } = useSession()
 
-    const handleChangeInput = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-
-
-    };
+   
     const handleSubmit = (e) => {
         e.preventDefault();
         const commentData = {
             _type: 'comment',
             name: session.user.name,
-            comment: formData.comment,
+            comment: comment,
             postid: postid,
             image: session.user.image,
             commentdate: new Date()
@@ -42,6 +43,7 @@ const Comments = ({ postid, allcomments }) => {
                 console.log("you successfully commented")
             })
             .catch((err) => console.log(err));
+        setComment(" ")
     };
 
 
@@ -61,13 +63,13 @@ const Comments = ({ postid, allcomments }) => {
                                 <input
                                     type="text"
                                     placeholder="Add a comment..."
-                                    className='py-2 px-4 w-[300px] md:w-[350px] '
+                                    className='py-2 px-4 w-[300px] md:w-[450px] '
                                     name="comment"
                                     minLength="5"
-                                    maxLength="50"
-                                    value={formData.comment}
-                                    onChange={handleChangeInput}
-                                />
+                                    maxLength="60"
+                                    onChange={(e)=>setComment(e.target.value)}
+                                    value={comment}
+                               />
                                 <button type="submit " className="text-2xl border-l py-2 px-2 text-cyan-900"><AiOutlineSend /></button>
                             </form>
                         ) : (
@@ -79,7 +81,7 @@ const Comments = ({ postid, allcomments }) => {
                         )
                     }
                 </div>
-                <div className="list w-fit">
+                <div className="list w-full px-8">
                     {
                         comments && (
                             <div className="flex flex-col gap-5 text-sm">
@@ -87,7 +89,7 @@ const Comments = ({ postid, allcomments }) => {
                                 {
                                     comments.map((cm) => {
                                         return (
-                                            <div key={cm._id} className='flex flex-col px-5'>
+                                            <div key={cm._id} className='flex flex-col px-5 border-0 border-b pb-1'>
                                                 <div className="flex items-center gap-4 ">
                                                     <div className="">
                                                         <img src={cm.image} alt=""
