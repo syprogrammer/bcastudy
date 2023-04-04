@@ -22,7 +22,7 @@ if (router.isFallback) {
                     
                         <Link
                          key={item._id}
-                         className=' p-5 w-[200px]  md:w-[350px] text-center border  hover:cursor-pointer hover:bg-cyan-500 shadow-md rounded-lg'
+                         className=' p-5 w-[320px]  md:w-[400px] text-center border  hover:cursor-pointer hover:bg-cyan-500 shadow-md rounded-lg'
                             href={`/syllabus/semester/${item.semester}/subject/${item.slug.current}`}>
                             <span className='text-sm'>{item.subject.toUpperCase()}</span>
                         </Link>

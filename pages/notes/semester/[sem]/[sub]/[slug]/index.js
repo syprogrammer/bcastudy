@@ -42,7 +42,7 @@ const index = ({ post}) => {
   
   return (
     <div className='py-8 w-full'>
-      <div className='text-center font-bold'>{post[0].name}</div>
+      <div className='text-center p-5 text-lg font-bold'>{post[0].subject.toUpperCase()}</div>
       <div className=' flex flex-wrap gap-10 p-1 justify-center w-full'>
         <div className="container break-words border leading-loose  p-4 md:p-10  flex flex-col justify-center w-full md:w-[85%] mx-auto">
          

@@ -15,7 +15,7 @@ const RichTextComponent = {
         return null
       }
       return (
-        <div className="relative w-full h-fit m-10 mx-auto">
+        <div className="relative w-full h-fit p-1 mx-auto">
           <img
             className='object-contain'
             alt={value.alt || ' '}
@@ -36,9 +36,9 @@ const index = ({ syllabus }) => {
   }
   return (
     <div className='py-8'>
-      <div className='text-center font-bold'>{syllabus && (syllabus[0].name.toUpperCase())}</div>
-      <div className=' flex flex-wrap gap-10 p-5 justify-center'>
-        <div className="container border  p-5 md:p-10  flex flex-col justify-center w-[95%] md:w-[85%] lg:w-[70%] mx-auto">
+      <h1 className='text-center text-lg mb-4 font-bold p-5'>{syllabus && (syllabus[0].name.toUpperCase())}</h1>
+      <div className=' flex flex-wrap gap-10 p-1 justify-center'>
+        <div className="container border m-2 p-1 md:p-10  flex flex-col justify-center w-full md:w-[85%] lg:w-[70%] mx-auto">
           {
             syllabus && (
               <PortableText
