@@ -37,7 +37,6 @@ const Comments = ({ postid, allcomments }) => {
     }, [])
 
 
-    console.log("comment", comment.length)
     
     const { data: session } = useSession()
 
@@ -56,9 +55,15 @@ const Comments = ({ postid, allcomments }) => {
         client.create(commentData)
             .then(() => {
                 console.log("you successfully commented")
+                setTimeout(() => {
+                    console.log("reloaded data")
+                    handleFetchData()
+                }, 2000);
             })
             .catch((err) => console.log(err));
         setComment(" ")
+
+        
     };
 
 
