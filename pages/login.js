@@ -16,17 +16,17 @@ const login = () => {
 
     return (
         <>
-            <section className="min-h-screen flex flex-col-reverse py-10 w-[70%] justify-center mx-auto items-center"
+            <section className="md:min-h-screen flex flex-col-reverse py-10 w-[70%] justify-center mx-auto md:items-center"
 
             >
-                <div className="mb-4 w-[90%]  mx-auto">
+                <div className="mb-4 w-[100%] md:w-[90%]  mx-auto">
                     <img src="/banner.jpg" alt="" className='w-[full]' />
                 </div>
                
 
                     <div
                         type="button"
-                        className='text-sm w-fit  border flex items-center justify-center text-center gap-2 py-3 px-5 my-1 rounded-lg  cursor-pointer hover:border-cyan-800'
+                        className='text-sm w-fit mx-auto  border flex items-center justify-center text-center gap-2 py-5 px-8 my-1 rounded-lg  cursor-pointer hover:border-cyan-800'
                         onClick={handleGoogleSignin}
                     >
                         <img src="/google.png" alt=""

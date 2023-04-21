@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import { client } from '../client';
+import useSWR from "swr"
+
 import { AiOutlineSend } from 'react-icons/ai'
 import { useSession } from 'next-auth/react'
 import { BiCalendar } from 'react-icons/bi'
 
-
+import Time from './utils/Time'
 import Link from 'next/link'
 const Comments = ({ postid, allcomments }) => {
 
-    const [comment, setComment] = useState();
+    const [comment, setComment] = useState("✏️");
     const [comments, setComments] = useState();
     const handleFetchData = async () => {
         try {
             // const response = await fetch(`https://bcastudy.vercel.app/api/comment?id=${postid}`);
             // const data = await response.json();
-            const query = `*[_type=="comment" && postid=="${postid}"]`
+            // const query = `*[_type=="comment" && postid=="${postid}"]`
+            const query = `*[_type == "comment" && postid=="${postid}" && dateTime(now()) > dateTime(commentdate)] | order(_createdAt desc){
+                ...,
+                 "time": dateTime(now()) - dateTime(commentdate)
+               }`
             const data = await client.fetch(query)
             setComments(data)
         } catch (error) {
@@ -28,10 +34,11 @@ const Comments = ({ postid, allcomments }) => {
         } catch (err) {
             console.log(err)
         }
-    }, [comment])
+    }, [])
 
 
-    console.log("comments", comments)
+    console.log("comment", comment.length)
+    
     const { data: session } = useSession()
 
 
@@ -73,7 +80,7 @@ const Comments = ({ postid, allcomments }) => {
                                     placeholder="Add a comment..."
                                     className='py-2 px-4 w-[300px] md:w-[450px] '
                                     name="comment"
-                                    minLength="5"
+                                    minLength="8"
                                     maxLength="60"
                                     onChange={(e) => setComment(e.target.value)}
                                     value={comment}
@@ -83,7 +90,7 @@ const Comments = ({ postid, allcomments }) => {
                         ) : (
                             <Link href="/login">
                                 <div className="border p-2 text-cyan-800 border-cyan-900 rounded-lg hover:bg-cyan-800 hover:text-white">
-                                    <button>Login to comment</button>
+                                    <button >Login to comment</button>
                                 </div>
                             </Link>
                         )
@@ -114,7 +121,7 @@ const Comments = ({ postid, allcomments }) => {
 
                                                 <div className="pl-14 py-1 text-[10px] text-gray-400 flex gap-2 flex-wrap items-center">
                                                     <div><BiCalendar /></div>
-                                                    <div>{cm.commentdate.slice(0, 10)}</div>
+                                                    <div><Time num={cm.time}/></div>
                                                 </div>
                                             </div>
                                         )
