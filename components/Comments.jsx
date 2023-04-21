@@ -11,7 +11,7 @@ const Comments = ({ postid, allcomments }) => {
     const [comments, setComments] = useState();
     const handleFetchData = async () => {
         try {
-            const response = await fetch(`https://bcastudy.site/api/comment?id=${postid}`);
+            const response = await fetch(`bcastudy.site/api/comment?id=${postid}`);
             const data = await response.json();
             console.log(data);
             setComments(data)
