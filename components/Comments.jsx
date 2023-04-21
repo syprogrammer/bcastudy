@@ -34,7 +34,7 @@ const Comments = ({ postid, allcomments }) => {
         } catch (err) {
             console.log(err)
         }
-    }, [])
+    }, [comment])
 
 
     
@@ -55,15 +55,9 @@ const Comments = ({ postid, allcomments }) => {
         client.create(commentData)
             .then(() => {
                 console.log("you successfully commented")
-                setTimeout(() => {
-                    console.log("reloaded data")
-                    handleFetchData()
-                }, 2000);
             })
             .catch((err) => console.log(err));
-        setComment(" ")
-
-        
+        setComment(" ")      
     };
 
 
