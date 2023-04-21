@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { client } from '../client';
+import axios from 'axios';
+
 import { AiOutlineSend } from 'react-icons/ai'
 import { useSession } from 'next-auth/react'
 import { BiCalendar } from 'react-icons/bi'
@@ -11,8 +13,8 @@ const Comments = ({ postid, allcomments }) => {
     const [comments, setComments] = useState();
     const handleFetchData = async () => {
         try {
-            const response = await fetch(`https://bcastudy.site/api/comment?id=${postid}`);
-            const data = await response.json();
+            const data = await axios.get(`https://bcastudy.site/api/comment?id=${postid}`);
+            // const data = await response.json();
             console.log(data);
             setComments(data)
         } catch (error) {
