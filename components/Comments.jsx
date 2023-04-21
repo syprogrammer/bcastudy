@@ -13,7 +13,7 @@ const Comments = ({ postid, allcomments }) => {
     const [comments, setComments] = useState();
     const handleFetchData = async () => {
         try {
-            const data = await axios.get(`https://bcastudy.site/api/comment?id=${postid}`);
+            const data = await axios.get(`https://bcastudy.vercel.app/api/comment?id=${postid}`);
             // const data = await response.json();
             console.log(data);
             setComments(data)
