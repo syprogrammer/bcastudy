@@ -1,5 +1,9 @@
 import '../styles/globals.css'
 import { Inter } from '@next/font/google'
+
+import { Analytics } from '@vercel/analytics/react'
+
+
 import { SessionProvider } from 'next-auth/react'
 const inter = Inter({ subsets: ['latin'] })
 import Head from 'next/head'
@@ -53,6 +57,7 @@ export default function App({ Component, pageProps }) {
           <Contact />
           <Footer />
           <Test />
+          <Analytics/>
         </div>
       </SessionProvider>
     </>
