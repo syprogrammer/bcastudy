@@ -23,9 +23,9 @@ export default function App({ Component, pageProps }) {
         defaultTitle="BcaStudy ccsu bca notes and question papers"
         description=" (Chaudhary Charan Singh University Meerut). 
         This website try to provide all the old question papers and Notes of B.C.A course of CCSU University."
-        canonical="https://BcaStudy.vercel.app"
+        canonical="https://www.bcastudy.site"
         openGraph={{
-          url: "https://BcaStudy.vercel.app",
+          url: "https://www.bcastudy.site",
           title: "BcaStudy ccsu bca notes and question papers",
           description: `(Chaudhary Charan Singh University Meerut)
           This website try to provide all the old question papers and Notes of B.C.A courses of CCSU University`,
