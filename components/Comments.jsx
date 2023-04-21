@@ -37,7 +37,7 @@ const Comments = ({ postid, allcomments }) => {
             image: session.user.image,
             commentdate: new Date()
         };
-        
+        console.log(commentData)
         client.create(commentData)
             .then(() => {
                 console.log("you successfully commented")
