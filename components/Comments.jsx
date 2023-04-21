@@ -9,24 +9,30 @@ const Comments = ({ postid, allcomments }) => {
 
     const [comment, setComment] = useState();
     const [comments, setComments] = useState();
-
-    const fetchData = ()=>{
-        fetch(
-            `https://bcastudy.site/api/comment?id=${postid}`)
-            .then((res) => res.json())
-            .then((json) => {
-                setComments(json)
-            })
+    const handleFetchData = async () => {
+        try {
+            const response = await fetch(`http://bcastudy.site/api/comment?id=${postid}`);
+            const data = await response.json();
+            console.log(data);
+            setComments(data)
+        } catch (error) {
+            console.log(error)
+        }
     }
+
     useEffect(() => {
-        fetchData()
+        try {
+            handleFetchData()
+        } catch (error) {
+            console.log(error)
+        }
     }, [])
 
 
     console.log("comments", comments)
     const { data: session } = useSession()
 
-   
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const commentData = {
@@ -67,16 +73,16 @@ const Comments = ({ postid, allcomments }) => {
                                     name="comment"
                                     minLength="5"
                                     maxLength="60"
-                                    onChange={(e)=>setComment(e.target.value)}
+                                    onChange={(e) => setComment(e.target.value)}
                                     value={comment}
-                               />
+                                />
                                 <button type="submit " className="text-2xl border-l py-2 px-2 text-cyan-900"><AiOutlineSend /></button>
                             </form>
                         ) : (
                             <Link href="/login">
-                            <div className="border p-2 text-cyan-800 border-cyan-900 rounded-lg hover:bg-cyan-800 hover:text-white">
-                                <button>Login to comment</button>
-                            </div>
+                                <div className="border p-2 text-cyan-800 border-cyan-900 rounded-lg hover:bg-cyan-800 hover:text-white">
+                                    <button>Login to comment</button>
+                                </div>
                             </Link>
                         )
                     }
@@ -105,8 +111,8 @@ const Comments = ({ postid, allcomments }) => {
 
 
                                                 <div className="pl-14 py-1 text-[10px] text-gray-400 flex gap-2 flex-wrap items-center">
-                                                <div><BiCalendar /></div>
-                                                <div>{cm.commentdate.slice(0, 10)}</div>
+                                                    <div><BiCalendar /></div>
+                                                    <div>{cm.commentdate.slice(0, 10)}</div>
                                                 </div>
                                             </div>
                                         )
