@@ -3,7 +3,8 @@ import { client } from '../client';
 import { AiOutlineSend } from 'react-icons/ai'
 import { useSession } from 'next-auth/react'
 import { BiCalendar } from 'react-icons/bi'
-import { BsPersonFill } from 'react-icons/bs'
+
+
 import Link from 'next/link'
 const Comments = ({ postid, allcomments }) => {
 
@@ -11,9 +12,10 @@ const Comments = ({ postid, allcomments }) => {
     const [comments, setComments] = useState();
     const handleFetchData = async () => {
         try {
-            const response = await fetch(`https://bcastudy.vercel.app/api/comment?id=${postid}`);
-            const data = await response.json();
-            console.log(data);
+            // const response = await fetch(`https://bcastudy.vercel.app/api/comment?id=${postid}`);
+            // const data = await response.json();
+            const query = `*[_type=="comment" && postid=="${postid}"]`
+            const data = await client.fetch(query)
             setComments(data)
         } catch (error) {
             console.log(error)
