@@ -19,8 +19,7 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width" />
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
-    
-</script>
+
       </Head>
 
       <NextSeo
