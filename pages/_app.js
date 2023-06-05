@@ -19,6 +19,16 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width" />
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
+    
+    
+<link rel="alternate" hreflang="en" href="https://bcastudy.site">
+<link rel="alternate" hreflang="hi" href="https://hi.bcastudy.site">
+<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+<script>
+    Weglot.initialize({
+        api_key: 'wg_9c1bd69daa1dd596f95cefd73bad099c6'
+    });
+</script>
       </Head>
 
       <NextSeo
