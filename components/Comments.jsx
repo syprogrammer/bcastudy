@@ -12,6 +12,8 @@ const Comments = ({ postid, allcomments }) => {
 
     const [comment, setComment] = useState("✏️");
     const [comments, setComments] = useState();
+    const [reload , setReload]= useState()
+
     const handleFetchData = async () => {
         try {
             // const response = await fetch(`https://bcastudy.vercel.app/api/comment?id=${postid}`);
@@ -35,7 +37,7 @@ const Comments = ({ postid, allcomments }) => {
         } catch (err) {
             console.log(err)
         }
-    }, [])
+    }, [reload])
 
 
     
@@ -55,13 +57,14 @@ const Comments = ({ postid, allcomments }) => {
         console.log(commentData)
         client.create(commentData)
             .then(() => {
-                console.log("you successfully commented")
+                console.log("you successfully commented")             
+                setReload(commentData)
+                
             })
             .catch((err) => console.log(err));
         setComment(" ")
-        console.log("data posted")    
-        handleFetchData() 
-        console.log("funciton called") 
+        
+        
     };
 
 
