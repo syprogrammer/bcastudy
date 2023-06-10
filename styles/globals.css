@@ -27,6 +27,9 @@ h1{
   }
   h5{
     padding: 8px 0;
+    margin: 20px 0px;
+    font-weight: 600;
+    font-size: 1rem;
   }
   ul li{
     list-style-type: disc;
