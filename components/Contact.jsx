@@ -90,7 +90,7 @@ const Contact = () => {
                                             type='email'
                                             required
                                             minLength="3"
-                                            maxLength='20'
+                                            maxLength='50'
                                             placeholder="Your Email"
                                             value={email}
                                             onChange={handleChangeInput}
