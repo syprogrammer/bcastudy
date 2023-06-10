@@ -22,6 +22,7 @@ const Comments = ({ postid, allcomments }) => {
                  "time": dateTime(now()) - dateTime(commentdate)
                }`
             const data = await client.fetch(query)
+            console.log(data)
             setComments(data)
         } catch (error) {
             console.log(error)
