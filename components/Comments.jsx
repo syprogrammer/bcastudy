@@ -73,8 +73,11 @@ const Comments = ({ postid, allcomments }) => {
             <div className="flex flex-col justify-center items-center pt-8 border-t">
                 <div className="text-2xl text-center w-fit">
                     Comments
+                    <p className='text-center text-sm text-gray-500'>Comments take few seconds to update</p>
                 </div>
                 <div className="w-fit my-8 md:p-5 max-w-[70%] ">
+                
+
                     {
                         session ? (
                             <form
@@ -91,6 +94,7 @@ const Comments = ({ postid, allcomments }) => {
                                     onChange={(e) => setComment(e.target.value)}
                                     value={comment}
                                 />
+                                
                                 <button type="submit " className="text-2xl border-l py-2 px-2 text-cyan-900"><AiOutlineSend /></button>
                             </form>
                         ) : (
