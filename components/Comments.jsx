@@ -35,7 +35,7 @@ const Comments = ({ postid, allcomments }) => {
         } catch (err) {
             console.log(err)
         }
-    }, [comment])
+    }, [])
 
 
     
@@ -58,7 +58,10 @@ const Comments = ({ postid, allcomments }) => {
                 console.log("you successfully commented")
             })
             .catch((err) => console.log(err));
-        setComment(" ")      
+        setComment(" ")
+        console.log("data posted")    
+        handleFetchData() 
+        console.log("funciton called") 
     };
 
 
