@@ -38,7 +38,7 @@ h5 {
 
 h6 {
   padding: 8px 0;
-  margin: 10px 0px;
+  margin: 0px 0px 10px 0px;
   font-weight: 400;
   font-size: 0.8rem;
 }
@@ -61,4 +61,8 @@ ol li {
 
 .list-none {
   list-style: none;
+}
+
+a{
+  color:#08a4e3;
 }
