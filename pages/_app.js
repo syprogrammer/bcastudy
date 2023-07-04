@@ -17,7 +17,8 @@ export default function App({ Component, pageProps }) {
         <title>BcaStudy</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width" />
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3607712458014663"
+     crossorigin="anonymous"></script>
         <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
 
       </Head>
